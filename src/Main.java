@@ -9,9 +9,10 @@ void main() {
     list.add(new Product("Smatphone",1500.00));
     list.add(new Product("Tablet",1200.00));
     list.add(new Product("Notebook", 3000.00));
-
-    list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
-    for (Product p : list) {
-       IO.println(p);
-    }
+    list.add(new Product("Mouse", 50.00));
+    list.add(new Product("Monitor", 500.00));
+    list.add(new Product("Headset", 76.00));
+    
+    list.forEach(p -> p.setPrice(p.getPrice() * 1.1)); // Apply a 10% increase to all products
+    list.forEach(System.out::println); // Print all products
 }
